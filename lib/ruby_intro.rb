@@ -78,4 +78,18 @@ end
 
 class BookInStock
 # YOUR CODE HERE
+  attr_accessor:isbn
+  attr_accessor:price
+
+  def initialize(isbn, price)
+    if isbn.size == 0 or price <= 0
+      raise ArgumentError, "Invalid Input\n"
+    end
+    @isbn = isbn
+    @price = price
+  end
+  
+  def price_as_string
+    return "$%.2f"%@price.to_f()
+  end
 end
