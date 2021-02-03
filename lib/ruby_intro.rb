@@ -47,11 +47,31 @@ end
 
 def starts_with_consonant? s
   # YOUR CODE HERE
-  
+  if s.size == 0 
+    return false
+  end
+  if s[0].match(/^[[:alpha:]]$/) and !['A','E','I','O','U'].include?(s[0].upcase)
+    return true
+  else
+    return false
+  end
 end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
+  if s.size == 0
+    return false
+  end
+  if s.count('0') + s.count('1') != s.size
+    return false
+  end
+  
+  value = s.to_i(2)
+  if value % 4 == 0
+    return true
+  else
+    return false
+  end
 end
 
 # Part 3
